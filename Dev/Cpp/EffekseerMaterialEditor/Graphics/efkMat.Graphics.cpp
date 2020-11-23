@@ -556,6 +556,28 @@ bool Preview::UpdateConstantValues(float time, std::array<float, 4> customData1,
 			constantBuffer->SetData(values, layout.second.GetSize(), layout.second.Offset);
 		}
 
+		if (layout.first == "reconstructionParam1")
+		{
+			// TODO
+			float values[4];
+			values[0] = 0.0f;
+			values[1] = 0.0f;
+			values[2] = 2.0f;
+
+			constantBuffer->SetData(values, layout.second.GetSize(), layout.second.Offset);
+		}
+
+		if (layout.first == "reconstructionParam2")
+		{
+			// TODO
+			float values[4];
+			values[0] = 0.0f;
+			values[1] = 0.0f;
+			values[2] = 2.0f;
+
+			constantBuffer->SetData(values, layout.second.GetSize(), layout.second.Offset);
+		}
+
 		if (layout.first == "lightDirection")
 		{
 			float values[4];
