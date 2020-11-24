@@ -43,7 +43,7 @@ static const char* material_common_vs_define = R"()"
 
 
 // Dummy
-float CalcDepthFade(vec2 screenUV, float meshZ, float softParticleParam) { return 1.0f; };
+float CalcDepthFade(vec2 screenUV, float meshZ, float softParticleParam) { return 1.0f; }
 
 )";
 

@@ -434,8 +434,17 @@ float2 GetUVBack(float2 uv)
 
 float CalcDepthFade(float2 screenUV, float meshZ, float softParticleParam)
 {
+)"
+#if defined(_DIRECTX9)
+R"(
+	float backgroundZ = tex2D(efk_depth_sampler, GetUVBack(screenUV)).x;
+)"
+#else
+R"(
 	float backgroundZ = efk_depth_texture.Sample(efk_depth_sampler, GetUVBack(screenUV)).x;
-
+)"
+#endif
+R"(
 	float distance = softParticleParam * reconstructionParam1.w;
 	float2 rescale = reconstructionParam1.yz;
 	float4 params = reconstructionParam2;
